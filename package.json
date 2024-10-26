@@ -1,0 +1,15 @@
+{
+  "name": "cats-server",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "author": "gugdun",
+  "license": "ISC",
+  "description": "Server for cats game",
+  "dependencies": {
+    "uuid": "^10.0.0",
+    "ws": "^8.18.0"
+  }
+}
