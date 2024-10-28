@@ -1,14 +1,15 @@
 {
   "name": "cats-server",
   "version": "1.0.0",
-  "main": "src/server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js"
+    "build": "ncc build src/server.js -o dist"
   },
   "author": "gugdun",
   "license": "ISC",
   "description": "Server for cats game",
   "dependencies": {
+    "@zeit/ncc": "^0.22.3",
     "dotenv": "^16.4.5",
     "uuid": "^10.0.0",
     "ws": "^8.18.0"

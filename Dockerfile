@@ -1,7 +1,11 @@
-FROM node:18-alpine
-WORKDIR /usr/src/app
-COPY package.json ./
+FROM node:16-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 8080
-CMD [ "npm", "start" ]
+RUN npm run build
+
+FROM node:16-alpine
+WORKDIR /app
+COPY --from=builder /app/dist/index.js .
+CMD [ "node", "index.js" ]
